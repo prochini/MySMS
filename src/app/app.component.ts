@@ -1,3 +1,4 @@
+import { NotificationDIService } from './notification-di.service';
 import { NotificationService } from './notification.service';
 import { Component } from '@angular/core';
 
@@ -10,7 +11,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'MySMS';
   notificationService :NotificationService;
-  constructor(){
+
+
+  constructor(private NotificationDIService:NotificationDIService){
     this.notificationService = new NotificationService();
+  }
+
+  ngOnInit(){
+    this.title = this.NotificationDIService.showMessage();
   }
 }

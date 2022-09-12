@@ -11,9 +11,9 @@ export class NotificationService {
 
   //依賴 service 回傳的訊息
   showMessage(){
-    this.SMSService.sendMessage();
+    return this.SMSService.sendMessage();
   }
-  
+
   constructor() { 
     this.SMSService = new SMSService();
   }
